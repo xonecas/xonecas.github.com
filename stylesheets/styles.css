@@ -280,6 +280,8 @@ header li, section h4 {
 	-webkit-box-shadow: inset 0px 1px 1px 0 rgba(233,2,38, 1);
 	box-shadow: inset 0px 1px 1px 0 rgba(233,2,38, 1);
 
+    color: #fff;
+
 }
 
 header li:hover {
