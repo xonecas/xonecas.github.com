@@ -328,13 +328,11 @@ section h4 a.buttons { color: #fff; }
 
 /* Footer */
 
-footer {
-  width:170px;
-  right: 10px;
-  position:fixed;
-  bottom:10px;
-	padding-left: 50px;
-}
+	footer {
+		border-top: 1px solid #ccc;
+		margin:0 84px 0 50px;
+		padding:0;
+	}
 
 @media print, screen and (max-width: 960px) {
 
@@ -348,12 +346,6 @@ footer {
     position:static;
     width:auto;
   }
-
-	footer {
-		border-top: 1px solid #ccc;
-		margin:0 84px 0 50px;
-		padding:0;
-	}
 
   header {
     padding-right:320px;
