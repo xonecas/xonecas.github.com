@@ -154,15 +154,15 @@ img {
 
 code, pre {
 	font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
-  color:#000;
+  color:#FFF;
   font-size:14px;
 }
 
 pre {
 	padding: 4px 12px;
-  background: #FDFEFB;
+  background: #171717;
   border-radius:4px;
-  border:1px solid #D7D8C8;
+  border:1px solid #AF0011;
   overflow: auto;
   overflow-y: hidden;
 	margin-bottom: 32px;
