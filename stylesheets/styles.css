@@ -73,7 +73,7 @@ h3 {
 }
 
 h4, h5, h6 {
-	font-family: Arvo, Monaco, serif;
+	font-family: Inconsolata, Monaco, serif;
 	font-weight: 700;
 }
 
@@ -232,7 +232,7 @@ p.header {
 }
 
 h1.header {
-	font-family: Arvo, sans-serif;
+	font-family: Inconsolata, sans-serif;
 	font-size: 30px;
 	font-weight: 300;
 	line-height: 1.3em;
