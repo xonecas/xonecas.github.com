@@ -41,8 +41,7 @@
             to your <code>.vimrc</code>.
         </p>
 
-        <pre><code>
-function! ToggleBg()
+        <pre><code>function! ToggleBg()
     if &background == "light"
         set background=dark
     else
@@ -50,8 +49,7 @@ function! ToggleBg()
     endif
 endfunction
 command! ToggleBg :call ToggleBg()
-map <C-X> :ToggleBg<CR>
-        </code></pre>
+map <C-X> :ToggleBg<CR></code></pre>
 
         <p>
             These colorschemes were made by fiddling with the source code of
