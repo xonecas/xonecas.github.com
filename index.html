@@ -21,11 +21,70 @@
 
 
         <ul>
-          <li><a class="buttons github" href="https://github.com/xonecas">GitHub Profile</a></li>
+            <li>
+                <a id="config-link" class="buttons-i github" href="#config">
+                    .vimrc
+                </a>
+            </li>
+            <li>
+                <a id="colors-link" class="buttons-i github" href="#colors">
+                    vim colorschemes
+                </a>
+            </li>
+            <li>
+                <a class="buttons github" href="https://github.com/xonecas">
+                    GitHub Profile
+                </a>
+            </li>
         </ul>
 
       </header>
-      <section>
+
+        <section id="config">
+            <h3>Sean's vim configuration</h3>
+
+            <p>Simple config file :-)</p>
+
+<pre><code>call pathogen#infect()
+set guioptions=
+set directory^=~/.vswap
+set number
+set ruler
+set colorcolumn=80
+set cursorline
+set visualbell t_vb=
+set incsearch
+set smartcase
+set smartindent
+set autoindent
+set expandtab
+set smarttab
+set tabstop=4
+set shiftwidth=4
+set list
+set listchars=tab:▸\ ,eol:¬,trail:⋅,extends:❯,precedes:❮
+set showbreak=↪
+syntax on
+colorscheme bearded-adventure
+set background=dark
+filetype plugin on
+function! ToggleBg()
+    if &amp;background == "light"
+        "let g:lucius_style = 'dark'
+        set background=dark
+    else
+        "let g:lucius_style = 'light'
+        set background=light
+    endif
+endfunction
+command! ToggleBg :call ToggleBg()
+map &lt;C-X&gt; :ToggleBg&lt;CR&gt;
+map &lt;C-C&gt; :NERDTreeToggle&lt;CR&gt;
+</code></pre>
+
+        </section>
+
+      <section id="colors">
         <h3>Sean's vim colorschemes</h3>
 
         <p>
@@ -75,7 +134,36 @@ map &lt;C-X&gt; :ToggleBg&lt;CR&gt;
         <p><small>Hosted on <a href="https://pages.github.com">GitHub Pages</a> using the Dinky theme, with a tiny twist</small></p>
       </footer>
     </div>
-    <!--[if !IE]><script>fixScale(document);</script><!--<![endif]-->
-		
+    <!--[if !IE]>
+        <script>fixScale(document);</script>
+    <![endif]-->
+
+    <script>
+
+(function () {
+    var config = document.querySelector('#config'),
+        configLink = document.querySelector('#config-link'),
+        colors = document.querySelector('#colors'),
+        colorsLink = document.querySelector('#colors-link'),
+
+        handler = function (e) {
+            config.style.display = 'none';
+            colors.style.display = 'none';
+
+            [e.target.href.substring(1)].style.display = 'block';
+
+            if(e.preventDefault) { e.preventDefault(); }
+            return false;
+        };
+
+    colors.style.display = 'none';
+
+    configLink.addEventListener('click', handler, false);
+    colorsLink.addEventListener('click', handler, false);
+
+}());
+
+    </script>
+
   </body>
 </html>
