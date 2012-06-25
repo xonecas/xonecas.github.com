@@ -147,8 +147,7 @@ map &lt;C-X&gt; :ToggleBg&lt;CR&gt;
         colorsLink = document.querySelector('#colors-link'),
 
         handler = function (e) {
-            var container = e.target.href.substring(1);
-
+            var container = e.target.href.split('/').pop().substring(1);
 
             if (container === 'config') {
                 colors.style.display = 'none';
