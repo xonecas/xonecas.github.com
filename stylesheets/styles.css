@@ -155,7 +155,7 @@ img {
 /* Code blocks */
 
 code, pre {
-	font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
+	font-family: Inconsolata, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
   color:#FFF;
   background: #171717;
   font-size:14px;
