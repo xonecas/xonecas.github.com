@@ -155,7 +155,9 @@ img {
 code, pre {
 	font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
   color:#FFF;
+  background: #171717;
   font-size:14px;
+  border-radius:2px;
 }
 
 pre {
