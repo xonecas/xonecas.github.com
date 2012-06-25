@@ -258,7 +258,7 @@ header ul {
   padding:0;
 }
 
-header li {
+header li, section h4 {
 	list-style-type: none;
   width:132px;
   height:15px;
