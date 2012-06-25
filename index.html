@@ -147,12 +147,18 @@ map &lt;C-X&gt; :ToggleBg&lt;CR&gt;
         colorsLink = document.querySelector('#colors-link'),
 
         handler = function (e) {
-            config.style.display = 'none';
-            colors.style.display = 'none';
+            var container = e.target.href.substring(1);
 
-            [e.target.href.substring(1)].style.display = 'block';
 
-            if(e.preventDefault) { e.preventDefault(); }
+            if (container === 'config') {
+                colors.style.display = 'none';
+                config.style.display = 'block';
+            } else {
+                config.style.display = 'none';
+                colors.style.display = 'block';
+            }
+
+            if (e.preventDefault) { e.preventDefault(); }
             return false;
         };
 
