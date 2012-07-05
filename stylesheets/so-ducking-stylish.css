@@ -50,8 +50,80 @@ table{border-collapse:collapse;border-spacing:0;}
 
 /* === end normalize === */
 
-header {
-    position: fixed;
-    top: 0;
-    background: #fff;
-    border-bottom: 1px solid #eee;
+pre .str,code .str{color:#025d8c;}
+pre .kwd,code .kwd{color:#02779e;}
+pre .com,code .com{color:#1693a5;font-style:italic;}
+pre .typ,code .typ{color:#3bbbb3;}
+pre .lit,code .lit{color:#f02311;}
+pre .pun,code .pun{color:#ff6600;}
+pre .pln,code .pln{color:#ff9900;}
+pre .tag,code .tag{color:#fbb829;}
+pre .atn,code .atn{color:#0c0f66;}
+pre .atv,code .atv{color:#67baf5;}
+pre .dec,code .dec{color:#00d2ff;}
+pre.prettyprint,code.prettyprint{background-color:#000;-moz-border-radius:8px;-webkit-border-radius:8px;-o-border-radius:8px;-ms-border-radius:8px;-khtml-border-radius:8px;border-radius:8px;}
+pre.prettyprint{width:95%;margin:1em auto;padding:1em;white-space:pre-wrap;}
+ol.linenums{margin-top:0;margin-bottom:0;color:#AEAEAE;}
+li.L0,li.L1,li.L2,li.L3,li.L5,li.L6,li.L7,li.L8{list-style-type:none;}
+@media print{pre .str,code .str{color:#060;} pre .kwd,code .kwd{color:#006;font-weight:bold;} pre .com,code .com{color:#600;font-style:italic;} pre .typ,code .typ{color:#404;font-weight:bold;} pre .lit,code .lit{color:#044;} pre .pun,code .pun{color:#440;} pre .pln,code .pln{color:#000;} pre .tag,code .tag{color:#006;font-weight:bold;} pre .atn,code .atn{color:#404;} pre .atv,code .atv{color:#060;}}
+
+/* === end pretify (code hl) === */
+
+html, body {
+    font-family: 'Droid Sans', sans-serif;
+    font-size: 16px;
+    background: #1f1f1f;
+    color: #f7fdfa;
+}
+
+body {
+    width: 936px;
+    padding: 0 10px 0 10px;
+    border-left: 4px solid #00d2ff;
+}
+
+code, pre {
+    font-family: 'Droid Sans Mono', sans-serif;
+    font-size: 13px;
+}
+pre {
+    -webkit-box-shadow: 0px 0px 15px 5px #000;
+    box-shadow: 0px 0px 15px 5px #000;
+}
+
+img {
+    max-width: 100%;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    -moz-background-clip: padding;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    -webkit-box-shadow: 0px 0px 15px 5px #000;
+    box-shadow: 0px 0px 15px 5px #000;
+}
+
+header, footer {
+    text-align: center;
+    color: #333;
+    padding: 20px 0;
+    font-weight: bold;
+    font-size: 24px;
+    text-shadow: 0 -1px 1px #000;
+}
+
+a, a:active {
+    color: #02779e;
+}
+
+a:hover, a:visited {
+    color: #3bbbb2;;
+}
+
+hr {
+    width: 50%;
+    margin: 40px auto;
+    background-color: #000;
+    border: none;
+    border-bottom: 1px solid #333;
+    height: 1px;
+}
