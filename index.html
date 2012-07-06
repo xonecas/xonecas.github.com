@@ -7,11 +7,12 @@
     <meta name="description" content="Sean's vim and code stuffs : Mostly vim..." />
 
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+    <script src="javascripts/prettify.js"></script>
 
     <title>Sean's vim and code stuffs</title>
   </head>
 
-  <body>
+  <body onload="prettyPrint()">
 
     <!-- HEADER -->
     <div id="header_wrap" class="outer">
@@ -31,7 +32,7 @@
 
         <p>Simple config file :-)</p>
 
-        <pre class="prettyprint"><code>call pathogen#infect()
+        <pre class="prettyprint linenums"><code>call pathogen#infect()
 set guioptions=
 set directory^=~/.vswap
 set number
@@ -55,16 +56,15 @@ colorscheme laughing-lana
 set background=dark
 filetype plugin on
 function! ToggleBg()
-if &amp;background == "light"
-    set background=dark
-else
-    set background=light
-endif
+    if &amp;background == "light"
+        set background=dark
+    else
+        set background=light
+    endif
 endfunction
 command! ToggleBg :call ToggleBg()
 map &lt;C-X&gt; :ToggleBg&lt;CR&gt;
-map &lt;C-C&gt; :NERDTreeToggle&lt;CR&gt;
-</code></pre>
+map &lt;C-C&gt; :NERDTreeToggle&lt;CR&gt;</code></pre>
 
         <h3>Sean's vim colorschemes</h3>
 
@@ -80,16 +80,15 @@ map &lt;C-C&gt; :NERDTreeToggle&lt;CR&gt;
             to your <code>.vimrc</code>.
         </p>
 
-        <pre class="prettyprint"><code>function! ToggleBg()
-if &amp;background == "light"
-set background=dark
-else
-set background=light
-endif
+        <pre class="prettyprint linenums:24"><code>function! ToggleBg()
+    if &amp;background == "light"
+        set background=dark
+    else
+        set background=light
+    endif
 endfunction
 command! ToggleBg :call ToggleBg()
-map &lt;C-X&gt; :ToggleBg&lt;CR&gt;
-        </code></pre>
+map &lt;C-X&gt; :ToggleBg&lt;CR&gt;</code></pre>
 
         <p>
             These colorschemes were made by fiddling with the source code of
@@ -140,11 +139,11 @@ map &lt;C-X&gt; :ToggleBg&lt;CR&gt;
     <!-- FOOTER  -->
     <div id="footer_wrap" class="outer">
       <footer class="inner">
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+        <p>
+            Published with <a href="http://pages.github.com">GitHub Pages</a>
+            <em>and some &lt;3</em>
+        </p>
       </footer>
     </div>
-
-    
-
   </body>
 </html>
