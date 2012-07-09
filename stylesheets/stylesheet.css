@@ -433,3 +433,9 @@ ol.linenums li {
   line-height: 18px;
   text-shadow: 0 1px 0 #fff;
 }
+
+#project_title, #project_tagline {
+    font-weight: bold;
+    color: #111;
+    text-shadow: 0 1px 0 #444;
+}
