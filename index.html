@@ -23,7 +23,9 @@
           <h2 id="project_tagline">Mostly vim...</h2>
 
         </header>
+        <a href="http://internetdefenseleague.org"><img id="idl" src="http://internetdefenseleague.org/images/badges/final/banner_left.png" alt="Member of The Internet Defense League" /></a>
     </div>
+
 
     <!-- MAIN CONTENT -->
     <div id="main_content_wrap" class="outer">
@@ -141,9 +143,24 @@ map &lt;C-X&gt; :ToggleBg&lt;CR&gt;</code></pre>
       <footer class="inner">
         <p class="fancy">
             Published with <a href="http://pages.github.com">GitHub Pages</a>
-            <em>and some &lt;3</em>
+            <em>and some &hearts;</em>
         </p>
       </footer>
     </div>
+
+    <!-- internet defense league stuff -->
+
+
+    <script type="text/javascript">
+    window._idl = {};
+    _idl.variant = "modal"; // or "banner"
+    (function() {
+        var idl = document.createElement('script');
+        idl.type = 'text/javascript';
+        idl.async = true;
+        idl.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'members.internetdefenseleague.org/include/?url=' + (_idl.url || '') + '&campaign=' + (_idl.campaign || '') + '&variant=' + (_idl.variant || 'banner');
+        document.getElementsByTagName('body')[0].appendChild(idl);
+    })();
+</script>
   </body>
 </html>
