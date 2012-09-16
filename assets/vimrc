@@ -1,0 +1,55 @@
+filetype off
+call pathogen#infect()
+syntax on
+filetype plugin indent on
+set nocompatible
+set modelines=0
+set encoding=utf-8
+set relativenumber
+set guioptions=
+set directory^=~/.vswap
+set ruler
+set colorcolumn=80
+set cursorline
+set visualbell t_vb=
+set incsearch
+set smartcase
+set smartindent
+set autoindent
+set expandtab
+set smarttab
+set tabstop=4
+set shiftwidth=4
+set list
+set listchars=tab:▸\ ,eol:¬,trail:⋅,extends:❯,precedes:❮
+set showbreak=↪
+set noesckeys
+set guifont=Menlo:h11
+
+
+" === colors (dark for term, light for gui
+
+
+colorscheme shiny-ninja
+if has("gui_running")
+    set background=light
+else
+    set background=dark
+endif
+
+
+" === functions and mappings
+
+
+function! ToggleBg()
+    if has("gui_running")
+        if &background == "light"
+            set background=dark
+        else
+            set background=light
+        endif
+    endif
+endfunction
+command! ToggleBg :call ToggleBg()
+map <C-X> :ToggleBg<CR>
+map <C-C> :NERDTreeToggle<CR>

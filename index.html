@@ -1,166 +1,40 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
+    <head>
+        <title>Sean's vim stuffs</title>
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="css/bootstrap-responsive.css">
+        <link rel="stylesheet" href="css/tweaks.css">
+    </head>
 
-  <head>
-    <meta charset='utf-8' />
-    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="description" content="Sean's vim and code stuffs : Mostly vim..." />
+    <body>
+        <div class="container">
+            <div class="hero-unit">
+                <h1>Sean's vim stuffs</h1>
+                <p>Config and themes...</p>
+            </div>
 
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
-    <script src="javascripts/prettify.js"></script>
+            <hr>
 
-    <title>Sean's vim and code stuffs</title>
-  </head>
-
-  <body onload="prettyPrint()">
-
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/xonecas">View on GitHub</a>
-
-          <h1 id="project_title">Sean's vim and code stuffs</h1>
-          <h2 id="project_tagline">Mostly vim...</h2>
-
-        </header>
-        <a href="http://internetdefenseleague.org"><img id="idl" src="http://internetdefenseleague.org/images/badges/final/banner_left.png" alt="Member of The Internet Defense League" /></a>
-    </div>
-
-
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <h3>Welcome to GitHub Pages.</h3>
-
-        <p>Simple config file :-)</p>
-
-        <pre class="prettyprint linenums"><code>call pathogen#infect()
-set guioptions=
-set directory^=~/.vswap
-set number
-set ruler
-set colorcolumn=80
-set cursorline
-set visualbell t_vb=
-set incsearch
-set smartcase
-set smartindent
-set autoindent
-set expandtab
-set smarttab
-set tabstop=4
-set shiftwidth=4
-set list
-set listchars=tab:▸\ ,eol:¬,trail:⋅,extends:❯,precedes:❮
-set showbreak=↪
-syntax on
-colorscheme laughing-lana
-set background=dark
-filetype plugin on
-function! ToggleBg()
-    if &amp;background == "light"
-        set background=dark
-    else
-        set background=light
-    endif
-endfunction
-command! ToggleBg :call ToggleBg()
-map &lt;C-X&gt; :ToggleBg&lt;CR&gt;
-map &lt;C-C&gt; :NERDTreeToggle&lt;CR&gt;</code></pre>
-
-        <h3>Sean's vim colorschemes</h3>
-
-        <p>
-            I hacked these colorschemes together, and will continue to do more.
-            I'm lacking dark and light background colorschmes. I change
-            my background so often that I even have a key binding for it. So
-            this is my effort to get more colors out there.
-        </p>
-
-        <p>
-            Just in case you want to get crazy switching backgrounds, add this
-            to your <code>.vimrc</code>.
-        </p>
-
-        <pre class="prettyprint linenums:24"><code>function! ToggleBg()
-    if &amp;background == "light"
-        set background=dark
-    else
-        set background=light
-    endif
-endfunction
-command! ToggleBg :call ToggleBg()
-map &lt;C-X&gt; :ToggleBg&lt;CR&gt;</code></pre>
-
-        <p>
-            These colorschemes were made by fiddling with the source code of
-            <a href="//github.com/noahfrederick/Hemisu">Hemisu</a>.
-            They only support GUI vims, <em>(update: cli coming soon!)</em>!
-            The names are random, courtesy of github's repo name sugestions.
-        </p>
-
-        <hr>
-
-        <h3>Laughing-lana</h3>
-        <h4>
-            <a class="buttons down-arrow" href="assets/laughing-lana.vim">
-                Download link
+            <a href="assets/vimrc" title="click to download the file">
+                <img class="" src="img/vimrc.png">
             </a>
-        </h4>
-        <div>
-            <img src="images/laughing-lana.png">
+
+            <a href="assets/shiny-ninja.vim" title="click to download the file">
+                <img class="img-rounded" src="img/shiny-ninja.png">
+            </a>
+
+            <hr>
+
+            <p>
+                <a href="//github.com/xonecas">
+                    Sean on Github
+                </a>
+            </p>
+
         </div>
 
-        <hr>
-
-        <h3>Bearded Adventure</h3>
-        <h4>
-            <a class="buttons down-arrow" href="assets/bearded-adventure.vim">
-                Download link
-            </a>
-        </h4>
-        <div>
-            <img src="images/bearded-adventure.png">
-        </div>
-
-        <hr>
-
-        <h3>Mustached Octo Nemesis</h3>
-        <h4>
-            <a class="buttons down-arrow" href="assets/mustached-octo-nemesis.vim">
-                Download link
-            </a>
-        </h4>
-        <div>
-            <img src="images/mustached-octo-nemesis.png">
-        </div>
-
-      </section>
-    </div>
-
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="fancy">
-            Published with <a href="http://pages.github.com">GitHub Pages</a>
-            <em>and some &hearts;</em>
-        </p>
-      </footer>
-    </div>
-
-    <!-- internet defense league stuff -->
-
-
-    <script type="text/javascript">
-    window._idl = {};
-    _idl.variant = "modal"; // or "banner"
-    (function() {
-        var idl = document.createElement('script');
-        idl.type = 'text/javascript';
-        idl.async = true;
-        idl.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'members.internetdefenseleague.org/include/?url=' + (_idl.url || '') + '&campaign=' + (_idl.campaign || '') + '&variant=' + (_idl.variant || 'banner');
-        document.getElementsByTagName('body')[0].appendChild(idl);
-    })();
-</script>
-  </body>
+        <script src="js/jquery-1.8.1.js"></script>
+        <script src="js/bootstrap.js"></script>
+    </body>
 </html>
