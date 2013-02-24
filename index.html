@@ -1,91 +1,36 @@
-<!doctype html>
-<html>
-    <head>
-        <title>Sean's vim stuffs</title>
-        <link rel="stylesheet" href="css/bootstrap.css">
-        <link rel="stylesheet" href="css/bootstrap-responsive.css">
-        <link rel="stylesheet" href="css/tweaks.css">
-    </head>
+---
+layout: default
+---
 
-    <body>
-        <div class="container">
-            <div class="hero-unit">
-                <h1>Sean's vim stuffs</h1>
-                <p>Config and themes...</p>
+<div class="row-fluid">
+    <div class="span2">
+        <h3>Recent posts</h3>
+        <ul class="nav nav-pills nav-stacked">
+            {% for post in site.posts %}
+            <li>
+                <a href="{{ post.url }}">
+                    {{ post.title }}
+                    <small>{{ post.date | date_to_string }}</small>
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="span10">
+        <div class="media">
+            <a class="pull-left" href="//www.gravatar.com/avatar/9ae495ba55b662af127e43af7296dc5e.png">
+                <img class="media-object img-polaroid" src="//www.gravatar.com/avatar/9ae495ba55b662af127e43af7296dc5e.png">
+            </a>
+            <div class="media-body">
+                <h4 class="media-heading">
+                    About
+                </h4>
+
+                {% capture about %}{% include about.markdown %}{% endcapture %}
+                {{ about | markdownify }}
+
             </div>
-
-            <div id="edshelf-widget"></div><script src="//edshelf.com/widgets/collection?id=10408"></script>
-
-            <hr>
-
-            <a href="assets/vimrc" title="click to download the file">
-                <img class="" src="img/vimrc.png">
-            </a>
-
-            <hr>
-
-            <h2>
-                Colors
-                <small>256 color terms and gui, hacked together by me</small>
-            </h2>
-
-            <a href="assets/shiny-ninja.vim" title="click to download the file">
-                <img class="" src="img/shiny-ninja.png">
-            </a>
-
-            <h2>Plugins <small>It's noteworthy that I use pathogen</small></h2>
-
-            <p>
-                <a href="https://github.com/juvenn/mustache.vim">
-                    Mustache <small>(syntax highlight)</small>
-                </a>
-            </p>
-            <p>
-                <a href="https://github.com/scrooloose/nerdtree">
-                    NERDTree <small>(file explorer)</small>
-                </a>
-            </p>
-            <p>
-                <a href="https://github.com/hail2u/vim-css3-syntax">
-                    CSS3 <small>(syntax highlight)</small>
-                </a>
-            </p>
-            <p>
-                <a href="https://github.com/nathanaelkane/vim-indent-guides">
-                    Indent guides <small>(UI enhancement)</small>
-                </a>
-            </p>
-            <p>
-                <a href="https://github.com/groenewege/vim-less">
-                    Less <small>(syntax highlight)</small>
-                </a>
-            </p>
-
-            <hr>
-
-            <p class="clearfix">
-                <blockquote>
-                    <img class="pull-right img-polaroid" src="img/sean.png"
-                        width=128 height=128 style="margin: 0 0 1px 10px;">
-
-                    <p style="text-align: justify;">
-                    Last time I was in Brazil, things got a little out of hand during a "misunderstanding" about the market prices of the neighboring country's favorite "export". Like is often to happen in these adventures; the local "merchants" felt disrespected and we were "urged" to repay our transgression through a series of PHP exercises and other buzzwordy sounding IT challenges...but in Portuguese. Luckily I wasn't dumb enough to travel to Brazil without Sean Caetano Martin. With his help, (let's be honest I just looked pretty) we coded our way out of this mess and into the hearts of the local "merchant's" daughter. The "merchants" were very impressed with our (read Sean's) skills, but could not let his daughter go without formally challenging us to a martial arts showdown. At Sunset we pitted Sean's Kung Fu and my looking pretty against the "merchant's" capoeira. Needless to say, Sean's Kung Fu prevailed where my moderate looks failed. We all celebrated together with the "Merchant" and his daughter and enjoyed caipirinas till sunrise. (Sean never slept)
-                    </p>
-                    <small>Ashton Chevallier</small>
-                </blockquote>
-            </p>
-
-            <p style="text-align: center;">
-                <i class="icon-heart"></i>
-                <a href="//github.com/xonecas" title="My open source code">
-                    Sean on Github
-                </a>
-            </p>
-
-
         </div>
+    </div>
+</div>
 
-        <script src="js/jquery-1.8.1.js"></script>
-        <script src="js/bootstrap.js"></script>
-    </body>
-</html>
