@@ -35,6 +35,23 @@
         }
     }
 
+    /* save for later
+    function loadStyle(url, fn) {
+        var style = document.createElement('style'),
+            fi;
+        style.textContent = '@import "' + url + '"';
+        fi = setInterval(function () {
+            try {
+                style.sheet.cssRules; // <--- MAGIC: only populated when file is loaded
+                fn();
+                clearInterval(fi);
+            } catch (e) {}
+        }, 10);
+
+        $('head').prepend(style);
+    }
+    */
+
     $(function () {
         var body = $('body'),
             nav = $('.navbar');
