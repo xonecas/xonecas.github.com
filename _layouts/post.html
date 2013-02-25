@@ -14,7 +14,7 @@ layout: default
             </li>
             {% endfor %}
         </ul>
-        <h3>Related Posts</h3>
+        <h3>Related</h3>
         <ul class="nav nav-pills nav-stacked">
             {% for post in site.related_posts limit:3 %}
             <li>
@@ -25,6 +25,9 @@ layout: default
             </li>
             {% endfor %}
         </ul>
+
+        {% include buttons.html %}
+
     </div>
     <div class="span10">
         {{ content }}

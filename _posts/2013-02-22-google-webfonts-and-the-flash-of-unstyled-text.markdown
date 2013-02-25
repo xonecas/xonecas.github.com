@@ -2,6 +2,11 @@
 layout: post
 ---
 
+Google webfonts and the flash of unstyled text.
+-----------------------------------------------
+
+Sunnyvale, Feb 22, 2013
+
 Ever noticed that if you use [Google Webfonts](//www.google.com/webfonts) you might have noticed your custom font text flashing into the custom font from the basic browser supported font. This is because the font takes sometime to download, and the document is usually ready before, so your text is visible. There some extreme fixes, like hiding the whole page while it load, and then showing it all in one move. I chose to do something lighter, because I like seeing the site coming to life, and for the user experience I think it's best that the user sees something, as oposing to thinking something is wrong if the load takes too long. Here is what I had to do, to ensure the elements with the custom font only appear after they have been loaded:
 
 #### The Javascript

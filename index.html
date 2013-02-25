@@ -4,7 +4,7 @@ layout: default
 
 <div class="row-fluid">
     <div class="span2">
-        <h3>Recent posts</h3>
+        <h3>Recent</h3>
         <ul class="nav nav-pills nav-stacked">
             {% for post in site.posts %}
             <li>
@@ -15,6 +15,9 @@ layout: default
             </li>
             {% endfor %}
         </ul>
+
+        {% include buttons.html %}
+
     </div>
     <div class="span10">
         <div class="media">
