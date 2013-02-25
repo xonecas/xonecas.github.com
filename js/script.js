@@ -13,7 +13,6 @@
             });
         }
     };
-
     (function () {
         var wf = document.createElement('script'),
             s;
@@ -23,18 +22,22 @@
         s = document.getElementsByTagName('script')[0];
         s.parentNode.insertBefore(wf, s);
     }());
-
     function setNavActive() {
         var items = $('.navbar .nav li'),
             page = location.pathname.match(/\/[a-zA-Z0-9\.\-]+$/);
-        page = page ? page[0] : page;
-        if (page === '/work.html') {
-            items.last().addClass('active');
-        } else {
-            items.first().addClass('active');
+        if (page) {
+            page = page[0];
+            if (page === '/work.html') {
+                items.last().addClass('active');
+            } else {
+                items.first().addClass('active');
+            }
         }
     }
-
+    $(function () {
+        $('body').show();
+        setNavActive();
+    });
     /* save for later
     function loadStyle(url, fn) {
         var style = document.createElement('style'),
@@ -51,12 +54,4 @@
         $('head').prepend(style);
     }
     */
-
-    $(function () {
-        var body = $('body'),
-            nav = $('.navbar');
-        body.show();
-        nav.affix({offset: 221});
-        setNavActive();
-    });
 }());
