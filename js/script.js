@@ -35,30 +35,11 @@
         }
     }
 
-    function loadStyle(url, fn) {
-        var style = document.createElement('style'),
-            fi;
-        style.textContent = '@import "' + url + '"';
-        fi = setInterval(function () {
-            try {
-                style.sheet.cssRules; // <--- MAGIC: only populated when file is loaded
-                fn();
-                clearInterval(fi);
-            } catch (e) {}
-        }, 10);
-
-        $('head').prepend(style);
-    }
-
     $(function () {
         var body = $('body'),
-            nav = $('.navbar'),
-            now = new Date().getHours(),
-            color = now > 6 && now < 18 ? 'light' : 'dark';
-        loadStyle('/css/bootstrap.' + color + '.min.css', function () {
-            body.show();
-            nav.affix({offset: 221});
-            setNavActive();
-        });
+            nav = $('.navbar');
+        body.show();
+        nav.affix({offset: 221});
+        setNavActive();
     });
 }());
