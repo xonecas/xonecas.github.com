@@ -7,6 +7,12 @@ layout: default
         {% include buttons.html %}
     </div>
     <div class="span10">
+        <div class="page-header">
+            <small class="muted pull-right">
+                Sorted by date, new to old.
+            </small>
+            <h3>All posts</h3>
+        </div>
         <ul class="nav nav-pills nav-stacked">
             {% for post in site.posts %}
             <li>

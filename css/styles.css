@@ -1,15 +1,19 @@
 /* google web font */
 h1 {
     visibility: hidden;
-    font-family: 'Quantico', sans-serif;
-    font-weight: 700;
+    font-family: 'Racing Sans One', sans-serif;
+    font-weight: 400;
 }
 .custom-font {
     visibility: hidden;
-    font-family: 'Quantico', sans-serif;
+    font-family: 'Racing Sans One', sans-serif;
     font-weight: 400;
 }
 /* navbar padding */
 body {
-    padding-top: 50px;
+    padding-top: 70px;
+}
+/* nice hero-unit */
+.hero-unit {
+    background: transparent;
 }
