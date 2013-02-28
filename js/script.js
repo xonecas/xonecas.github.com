@@ -36,10 +36,13 @@
             style = saved || 'light';
         function color(done) {
             var url = '/css/bootstrap.' + style + '.min.css';
-            $('#colorscheme').remove();
-            loadStyle(url, function (node) {
-                node.id = 'colorscheme';
-                if (done) { done(); }
+            $('body').fadeOut(function () {
+                $('#colorscheme').remove();
+                loadStyle(url, function (node) {
+                    node.id = 'colorscheme';
+                    $('body').fadeIn();
+                    if (done) { done(); }
+                });
             });
         }
         color(fn);
@@ -74,7 +77,7 @@
         setLightSwitch(function () {
             setRandomTitle();
             $('#iframe').replaceWith('<iframe src="http://xonecas.github.com/2d-particle-experiements" frameborder=0 width="100%" height=400></iframe>');
-            $('body').show();
+            $('body').fadeIn();
             $('.tipped').tooltip({ placement: 'left', animation: true });
             $('#reload-title').click(function (ev) {
                 ev.preventDefault();
