@@ -1,7 +1,6 @@
 ---
 layout: default
 ---
-
 <div class="hero-unit">
     <a id="reload-title" class="pull-right" href="#">
         <i class="icon-refresh tipped" title="Get a new title!"></i>
@@ -14,41 +13,23 @@ layout: default
         <a href="/2013/02/25/random-title-generator.html">This</a> is how I did it.
     </p>
 </div>
-
-<div class="row-fluid">
-    <div class="span2">
-        <h3>Recent</h3>
-        <ul class="nav nav-pills nav-stacked">
-            {% for post in site.posts %}
-            <li>
-                <a href="{{ post.url }}">
-                    {{ post.title }}
-                    <small>{{ post.date | date_to_string }}</small>
-                </a>
-            </li>
-            {% endfor %}
-        </ul>
-
-        {% include buttons.html %}
-
-    </div>
-    <div class="span10">
-        <div id="edshelf-widget"></div><script src="//edshelf.com/widgets/collection?id=10408&height=550"></script>
-
-        <div class="media">
-            <a class="pull-left" href="//www.gravatar.com/avatar/9ae495ba55b662af127e43af7296dc5e.png">
-                <img class="media-object img-polaroid" src="//www.gravatar.com/avatar/9ae495ba55b662af127e43af7296dc5e.png">
-            </a>
-            <div class="media-body">
-                <h4 class="media-heading">
-                    About
-                </h4>
-
-                {% capture about %}{% include about.markdown %}{% endcapture %}
-                {{ about | markdownify }}
-
-            </div>
-        </div>
-    </div>
+<div class="page-header">
+    <small class="muted pull-right">
+        Sorted by date, new to old.
+    </small>
+    <h3>All posts</h3>
 </div>
-
+<ul class="nav nav-pills nav-stacked">
+    {% for post in site.posts %}
+    <li>
+    <a href="{{ post.url }}">
+        {{ post.title }}
+        <small class="pull-right">{{ post.date | date_to_string }}</small>
+    </a>
+    </li>
+    {% endfor %}
+</ul>
+<div class="page-header">
+    <h3>My collection of programming tools at edshelf.</h3>
+</div>
+<div id="edshelf-widget"></div><script src="//edshelf.com/widgets/collection?id=10408&height=750"></script>

@@ -19,18 +19,6 @@
         }, 10);
         $('head').prepend(style);
     }
-    function setNavActive() {
-        var items = $('.nav-main li'),
-            page = location.pathname.match(/\/[a-zA-Z0-9\.\-]+$/);
-        if (page) {
-            page = page[0];
-            if (page === '/work.html') {
-                items.last().addClass('active');
-            } else {
-                items.first().addClass('active');
-            }
-        }
-    }
     function setRandomTitle() {
         var nouns = [ 'Functions', 'Loops', 'Bugs', 'Monkeys', 'Duck', 'String', 'Integers' ],
             adjs = [ 'Flying', 'Sleeping', 'Typing', 'Parsing', 'Lost', 'Delicious', 'Forgotten' ],
@@ -84,8 +72,8 @@
     }());
     $(function () {
         setLightSwitch(function () {
-            setNavActive();
             setRandomTitle();
+            $('#iframe').replaceWith('<iframe src="http://xonecas.github.com/2d-particle-experiements" frameborder=0 width="100%" height=400></iframe>');
             $('body').show();
             $('.tipped').tooltip({ placement: 'left', animation: true });
             $('#reload-title').click(function (ev) {

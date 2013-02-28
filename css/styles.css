@@ -11,9 +11,5 @@ h1 {
 }
 /* navbar padding */
 body {
-    padding-top: 70px;
-}
-/* nice hero-unit */
-.hero-unit {
-    background: transparent;
+    padding-top: 20px;
 }

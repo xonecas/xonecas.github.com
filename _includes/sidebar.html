@@ -1,0 +1,29 @@
+<p class="lead text-center">
+    <a href="//www.gravatar.com/avatar/9ae495ba55b662af127e43af7296dc5e.png" target="_blank">
+        <img class="img-circle img-polaroid" src="//www.gravatar.com/avatar/9ae495ba55b662af127e43af7296dc5e.png">
+    </a>
+    <h1 class="text-center">
+        <a class="custom-font" href="/">Sean Caetano Martin</a>
+    </h1>
+</p>
+<ul class="nav nav-pills nav-stacked">
+    <li>
+        <a id="light-switch" href="#">Flip the lights</a>
+    </li>
+</ul>
+<h3>Recent</h3>
+<ul class="nav nav-pills nav-stacked">
+    {% for post in site.posts %}
+    <li>
+        <a href="{{ post.url }}">
+            {{ post.title }}
+            <small>{{ post.date | date_to_string }}</small>
+        </a>
+    </li>
+    {% endfor %}
+</ul>
+<div class="muted">
+    {% capture about %}{% include about.markdown %}{% endcapture %}
+    {{ about | markdownify }}
+    {% include buttons.html %}
+</div>
