@@ -74,15 +74,15 @@
         s.parentNode.insertBefore(wf, s);
     }());
     $(function () {
-        setLightSwitch(function () {
+        //setLightSwitch(function () {
+        //});
+        setRandomTitle();
+        $('#iframe').replaceWith('<iframe src="http://xonecas.github.com/2d-particle-experiements" frameborder=0 width="100%" height=400></iframe>');
+        $('body').fadeIn();
+        $('.tipped').tooltip({ placement: 'left', animation: true });
+        $('#reload-title').click(function (ev) {
+            ev.preventDefault();
             setRandomTitle();
-            $('#iframe').replaceWith('<iframe src="http://xonecas.github.com/2d-particle-experiements" frameborder=0 width="100%" height=400></iframe>');
-            $('body').fadeIn();
-            $('.tipped').tooltip({ placement: 'left', animation: true });
-            $('#reload-title').click(function (ev) {
-                ev.preventDefault();
-                setRandomTitle();
-            });
         });
     });
 }());

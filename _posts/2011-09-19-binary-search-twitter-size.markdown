@@ -5,6 +5,8 @@ layout: post
 Binary Search, Twitter size
 ---------------------------
 
+San Jose, Aug 20, 2011
+
 `function f(a,v,l,h){var m;return hv ? f(a,v,l, m-1): a[m] &lt; v ? f(a,v,m+1,h): m; }`
 
 And it works too!

@@ -2,11 +2,11 @@
 layout: default
 ---
 <div class="hero-unit">
-    <a id="reload-title" class="pull-right" href="#">
-        <i class="icon-refresh tipped" title="Get a new title!"></i>
-    </a>
     <h1>
         <span id="random-title">Loading...</span>
+        <a id="reload-title" class="pull-right" href="#">
+            <i class="icon-refresh tipped" title="Get a new title!"></i>
+        </a>
     </h1>
     <p class="lead">
         I coulnd't think of a title, so a random one is generated.
@@ -19,10 +19,6 @@ layout: default
     {% assign content = post.content %}
     {{ content }}
 </div>
-<div class="page-header">
-    <h3>My collection of programming tools at edshelf.</h3>
-</div>
-<div id="edshelf-widget"></div><script src="//edshelf.com/widgets/collection?id=10408&height=750"></script>
 <div class="page-header">
     <small class="muted pull-right">
         Sorted by date, new to old.
@@ -39,3 +35,7 @@ layout: default
     </li>
     {% endfor %}
 </ul>
+<div class="page-header">
+    <h3>My collection of programming tools at edshelf.</h3>
+</div>
+<div id="edshelf-widget"></div><script src="//edshelf.com/widgets/collection?id=10408&height=750"></script>
