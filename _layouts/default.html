@@ -4,9 +4,7 @@
         <title>Sean Caetano Martin</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta charset="utf-8">
-        <link href="/css/bootstrap.min.css" rel="stylesheet">
-        <link href="/css/bootstrap-responsive.min.css" rel="stylesheet">
-        <link href="/css/styles.css" rel="stylesheet">
+        <link href="/css/flatty.css" rel="stylesheet">
     </head>
     <body style="display: none;">
     <div class="container-fluid">
@@ -21,7 +19,10 @@
     </div>
     {% include analytics.html %}
     <script src="/js/jquery.min.js"></script>
-    <script src="/js/bootstrap.min.js"></script>
-    <script src="/js/script.js"></script>
+    <script>
+        $.getScript('/js/script.js');
+        // hack to avoid small screens
+        if (window.innerWidth > 600) { $.getScript('/js/rings.js'); }
+    </script>
     </body>
 </html>

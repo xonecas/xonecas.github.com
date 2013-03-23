@@ -1,0 +1,16 @@
+.nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    > li > a {
+        display: block;
+        padding: 5px 0;
+        .border-radius(4px);
+    }
+
+    > li > a:active,
+    > li > a:hover {
+        background: darken(@darkBlue, 1%);
+    }
+}
