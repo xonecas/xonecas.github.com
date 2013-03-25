@@ -20,7 +20,8 @@ I think I got it pretty close:
     syntax on
     filetype plugin indent on
     set nocompatible
-    set modelines=0
+    set modeline
+    set modelines=5
     set encoding=utf-8
     set relativenumber
     set guioptions=
@@ -31,6 +32,7 @@ I think I got it pretty close:
     set incsearch
     set smartcase
     set smartindent
+    set hlsearch
     set autoindent
     set expandtab
     set smarttab
@@ -66,8 +68,15 @@ I think I got it pretty close:
     map <leader>x :ToggleBg<CR>
     map <leader>c :ToggleScheme<CR>
     map <leader>n :NERDTreeToggle<CR>
-    map <leader>] :tabnext<CR>
-    map <leader>[ :tabprevious<CR>
+    " === thanks Ian, http://statico.github.com/vim.html
+    map <leader>] :bnext<CR>
+    map <leader>[ :bprev<CR>
+    nmap <leader>e :e#<CR>
+    nmap j gj
+    nmap k gk
+    nmap <leader>h :nohlsearch<CR>
+    nmap <leader>s :SyntasticCheck<CR>
+    nmap <leader>p :CtrlPBuffer<CR>
     " === config vars ===
     let g:indent_guides_guide_size = 1
     " === colors ===
@@ -77,8 +86,7 @@ I think I got it pretty close:
     if !has('gui_running')
         set listchars=tab:▸\ ,eol:¬,trail:⋅
         set background=dark
-        " nocto adapts to the term env.
-        colorscheme noctu
+        colorscheme shiny-ninja
         if &term =~ "xterm"
             set t_Co=256
             if has("terminfo")
@@ -92,6 +100,10 @@ I think I got it pretty close:
     endif
     " === auto commands ===
     au BufNewFile,BufRead *.jsm set filetype=javascript
+    au BufNewFile,BufRead *.less syn cluster sassCssAttributes add=@cssColors
+    " === syntastic
+    " let g:syntastic_<filetype>_checkers=['<checker-name>']
+    let g:syntastic_javascript_checkers=['jslint']
 {% endhighlight %}
 
 Here is a list of dependencies to reproduce this setup:
@@ -99,3 +111,5 @@ Here is a list of dependencies to reproduce this setup:
  + [shiny-ninja](/assets/shiny-ninja.vim)
  + [hemisu](https://github.com/noahfrederick/Hemisu)
  + [noctu](https://github.com/noahfrederick/vim-noctu)
+
+*Note*: Post updated on March 25th, 2013
