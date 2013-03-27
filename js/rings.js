@@ -7,6 +7,42 @@ var rings = (function (win, doc) {
         width     = window.innerWidth,
         height    = window.innerHeight;
 
+    // Opera engineer Erik Möller wrote about rAF and developed a polyfill that
+    // better handles browsers without native support. You can read about it, but
+    // basically his code will choose a delay of between 4ms and 16ms in order to
+    // more closely match 60fps. Here it is, in case you’d like to use it. Note it
+    // uses the standard method name. I have also fixed the cancel* method’s name,
+    // as it has changed in WebKit.
+    //
+    // http://paulirish.com/2011/requestanimationframe-for-smart-animating/
+    (function() {
+        var lastTime = 0,
+            vendors = ['webkit', 'moz'],
+            x;
+
+        for(x = 0; x < vendors.length && !window.requestAnimationFrame; ++x) {
+            window.requestAnimationFrame = window[vendors[x]+'RequestAnimationFrame'];
+            window.cancelAnimationFrame = window[vendors[x]+'CancelAnimationFrame'] ||
+                                            window[vendors[x]+'CancelRequestAnimationFrame'];
+        }
+
+        if (!window.requestAnimationFrame) {
+            window.requestAnimationFrame = function(callback, element) {
+                var currTime = new Date().getTime(),
+                    timeToCall = Math.max(0, 16 - (currTime - lastTime)),
+                    id = window.setTimeout(function() { callback(currTime + timeToCall); }, timeToCall);
+                lastTime = currTime + timeToCall;
+                return id;
+            };
+        }
+
+        if (!window.cancelAnimationFrame) {
+            window.cancelAnimationFrame = function(id) {
+                clearTimeout(id);
+            };
+        }
+    }());
+
     //random range
     function _rr(min, max) {
         return Math.random() * (max - min) + min;
@@ -79,8 +115,8 @@ var rings = (function (win, doc) {
         canvas.height = height;
         body.appendChild(canvas);
         body.addEventListener('mousemove', function (ev) {
-            // only make rings 50% of the time 
-            if (Math.random() > 0.5) { return; }
+            // only make rings 30% of the time 
+            if (Math.random() > 0.333) { return; }
             hue = hue + 1 === 360 ? 1 : hue + 1;
             var ring = new Ring({
                 x: ev.clientX,
@@ -90,33 +126,40 @@ var rings = (function (win, doc) {
             rings.push(ring);
         }, false);
 
-        setInterval(function () {
-            var len,
-                idx,
-                _rings = [],
-                _ring;
+        function draw() {
+            setTimeout(function () {
+                window.requestAnimationFrame(draw);
 
-            c.save();
-            c.fillStyle = "rgba(0, 0, 0, 0.01)";
-            c.fillRect(0, 0, width, height);
-            c.restore();
+                var len,
+                    idx,
+                    _rings = [],
+                    _ring;
 
-            if (rings.length === 0) {
-                return;
-            }
+                c.save();
+                c.fillStyle = "rgba(0, 0, 0, 0.5)";
+                c.fillRect(0, 0, width, height);
+                c.restore();
 
-            for (idx = 0, len = rings.length; idx < len; idx += 1) {
-                _ring = rings[idx];
-                if (!_ring.destroy) {
-                    _rings.push(_ring);
+                if (rings.length === 0) {
+                    return;
                 }
-                _ring
-                    .update()
-                    .draw();
-            }
 
-            rings = _rings;
-        }, 1000 / 60);
+                for (idx = 0, len = rings.length; idx < len; idx += 1) {
+                    _ring = rings[idx];
+                    if (!_ring.destroy) {
+                        _rings.push(_ring);
+                    }
+                    _ring
+                        .update()
+                        .draw();
+                }
+
+                rings = _rings;
+            }, 1000 / 60);
+        }
+
+        draw();
+
     }
 
     win.onload = init;
