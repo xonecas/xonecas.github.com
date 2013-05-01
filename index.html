@@ -1,16 +1,18 @@
 ---
 layout: default
 ---
-<div class="hero-unit">
-    <h1>
-        <span id="random-title">Loading...</span>
-    </h1>
+<div class="title">
     <a id="reload-title" class="pull-right" href="#">
         Whats this?
     </a>
-    <p class="lead">
-        I coulnd't think of a title, so a random one is generated.
-        <a href="/2013/02/25/random-title-generator.html">This</a> is how I did it.
+    <h1>
+        <span id="random-title">Loading...</span>
+    </h1>
+    <p>
+        <small>
+            I coulnd't think of a title, so a random one is generated.
+            <a href="/2013/02/25/random-title-generator.html">This</a> is how I did it.
+        </small>
     </p>
 </div>
 <div>
@@ -19,13 +21,13 @@ layout: default
     {% assign content = post.content %}
     {{ content }}
 </div>
-<div class="page-header">
+<div>
     <small class="muted pull-right">
         Sorted by date, new to old.
     </small>
     <h3>All posts</h3>
 </div>
-<ul class="nav nav-pills nav-stacked">
+<ul>
     {% for post in site.posts %}
     <li>
     <a href="{{ post.url }}">
@@ -35,7 +37,3 @@ layout: default
     </li>
     {% endfor %}
 </ul>
-<div class="page-header">
-    <h3>My collection of programming tools at edshelf.</h3>
-</div>
-<div id="edshelf-widget"></div><script src="//edshelf.com/widgets/collection?id=10408&height=750"></script>

@@ -21,8 +21,6 @@
     $(function () {
         var $doc = $(document);
 
-        $('#iframe').replaceWith('<iframe src="http://xonecas.github.com/2d-particle-experiements" frameborder=0 width="100%" height=400></iframe>');
-
         $doc.on('click', '#reload-title', function (ev) {
             ev.preventDefault();
             setRandomTitle();

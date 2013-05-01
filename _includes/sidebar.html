@@ -1,23 +1,15 @@
-<div class="sidebar">
-    <p class="text-center top-pad">
-        <a href="//www.gravatar.com/avatar/9ae495ba55b662af127e43af7296dc5e.png" target="_blank" title="╯°□°）╯︵ ┻━┻">
-            <img class="img-polaroid" src="//www.gravatar.com/avatar/9ae495ba55b662af127e43af7296dc5e.png">
+<div>
+    <div>
+        <a href="//www.gravatar.com/avatar/9ae495ba55b662af127e43af7296dc5e.png"
+            target="_blank" title="╯°□°）╯︵ ┻━┻">
+            <img class="pull-left avatar"
+                alt="Sean Caetano Martin's profile picture"
+                src="//www.gravatar.com/avatar/9ae495ba55b662af127e43af7296dc5e.png">
         </a>
         <h1>
             <a href="/">Sean Caetano Martin</a>
         </h1>
-    </p>
-    <h3>Recent</h3>
-    <ul class="nav nav-pills nav-stacked">
-        {% for post in site.posts %}
-        <li>
-        <a href="{{ post.url }}">
-            {{ post.title }}
-            <small>{{ post.date | date_to_string }}</small>
-        </a>
-        </li>
-        {% endfor %}
-    </ul>
+    </div>
     <div class="muted">
         {% capture about %}{% include about.markdown %}{% endcapture %}
         {{ about | markdownify }}
