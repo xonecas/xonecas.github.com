@@ -8,9 +8,11 @@
         <link href="/css/flatty.css" rel="stylesheet">
     </head>
     <body style="display: none;">
-    <div class="container">
-        {{ content }}
-        {% include sidebar.html %}
+    <div class="container cf">
+        <div class="content">{{ content }}</div>
+        <div class="sidebar">
+            {% include sidebar.html %}
+        </div>
     </div>
     {% include analytics.html %}
     <script src="/js/jquery.min.js"></script>
