@@ -3,11 +3,6 @@ html, body {
     color: #eee;
     background-color: #020001;
 }
-code, pre {
-    /*font-size: 12px;*/
-    font-family: Menlo, Consolas, monospace;
-    /*line-height: 19px;*/
-}
 pre {
     padding: 2em 0;
 }
@@ -52,6 +47,11 @@ h1, h2, h3, h4, h5, h6, .fancy {
     font-size: 17px;
     line-height: 28px;
 }
+.content code, .content pre {
+    font-size: 15px;
+    font-family: Menlo, Consolas, monospace;
+    line-height: 17px;
+}
 
 .sidebar {
     float: right;
@@ -73,7 +73,7 @@ h1, h2, h3, h4, h5, h6, .fancy {
 .highlight .c { color: #808080; font-style: italic} /* Comment */
 .highlight .err { color: #e2e2e5} /* Error */
 .highlight .g { color: #e2e2e5} /* Generic */
-.highlight .k { color: #7e8aa2} /* Keyword */
+.highlight .k { color: #fe6c2b} /* Keyword */
 .highlight .l { color: #e2e2e5} /* Literal */
 .highlight .n { color: #e2e2e5} /* Name */
 .highlight .o { color: #e2e2e5} /* Operator */
@@ -93,12 +93,12 @@ h1, h2, h3, h4, h5, h6, .fancy {
 .highlight .gs { color: #e2e2e5} /* Generic.Strong */
 .highlight .gu { color: #f6f3e8; font-weight: bold} /* Generic.Subheading */
 .highlight .gt { color: #e2e2e5} /* Generic.Traceback */
-.highlight .kc { color: #7e8aa2} /* Keyword.Constant */
-.highlight .kd { color: #7e8aa2} /* Keyword.Declaration */
-.highlight .kn { color: #7e8aa2} /* Keyword.Namespace */
-.highlight .kp { color: #7e8aa2} /* Keyword.Pseudo */
-.highlight .kr { color: #7e8aa2} /* Keyword.Reserved */
-.highlight .kt { color: #7e8aa2} /* Keyword.Type */
+.highlight .kc { color: #fe6c2b} /* Keyword.Constant */
+.highlight .kd { color: #fe6c2b} /* Keyword.Declaration */
+.highlight .kn { color: #fe6c2b} /* Keyword.Namespace */
+.highlight .kp { color: #fe6c2b} /* Keyword.Pseudo */
+.highlight .kr { color: #fe6c2b} /* Keyword.Reserved */
+.highlight .kt { color: #fe6c2b} /* Keyword.Type */
 .highlight .ld { color: #e2e2e5} /* Literal.Date */
 .highlight .m { color: #ff9800} /* Literal.Number */
 .highlight .s { color: #b1d631; font-style: italic} /* Literal.String */
@@ -114,7 +114,7 @@ h1, h2, h3, h4, h5, h6, .fancy {
 .highlight .nn { color: #e2e2e5} /* Name.Namespace */
 .highlight .nx { color: #e2e2e5} /* Name.Other */
 .highlight .py { color: #e2e2e5} /* Name.Property */
-.highlight .nt { color: #7e8aa2} /* Name.Tag */
+.highlight .nt { color: #fe6c2b} /* Name.Tag */
 .highlight .nv { color: #b1d631} /* Name.Variable */
 .highlight .ow { color: #e2e2e5} /* Operator.Word */
 .highlight .w { color: #e2e2e5} /* Text.Whitespace */
