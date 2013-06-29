@@ -1,0 +1,10 @@
+body {
+    margin: 20px 0;
+    background: #fafafa;
+    font-family: 'Bitter', serif;
+    font-size: 110%;
+}
+.banner {
+    background: #fff;
+    border: 1px solid #f5f5f5;
+}

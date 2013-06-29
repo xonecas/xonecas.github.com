@@ -1,37 +1,34 @@
 ---
 layout: default
 ---
-<div class="title">
-    <a id="reload-title" class="pull-right" href="#">
-        <small>Whats this?</small>
-    </a>
-    <h1>
-        <span id="random-title">Loading...</span>
-    </h1>
-    <p class="fancy">
-        I coulnd't think of a title, so a random one is generated.
-        <a href="/2013/02/25/random-title-generator.html">This</a> is how I did it.
-    </p>
+<div class="text-center hero-unit banner">
+    <img class="img-circle img-polaroid" src="//2.gravatar.com/avatar/9ae495ba55b662af127e43af7296dc5e?size=128" width=128 alt="My handsome self." title="╯°□°）╯︵ ┻━┻">
+    <h1>Sean</h1>
+    <p class="lead">Internet platform #1 fan!</p>
 </div>
-<div>
-    <span class="muted pull-right">Latest</span>
-    {% assign post = site.posts.first %}
-    {% assign content = post.content %}
-    {{ content }}
+<div class="row-fluid">
+    <div class="offset2 span6">
+        <small class="muted pull-right">
+            Sorted by date, new to old.
+        </small>
+        <h2>All posts</h2>
+        <ul class="nav nav-tabs nav-stacked">
+            {% for post in site.posts %}
+            <li>
+            <a href="{{ post.url }}">
+                {{ post.title }}
+                <small class="pull-right muted">{{ post.date | date_to_string }}</small>
+            </a>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="span2">
+        <h2>Sean Caetano Martin</h2>
+        {% capture about %}
+        {% include about.markdown %}
+        {% endcapture %}
+        {{ about | markdownify }}
+        {% include buttons.html %}
+    </div>
 </div>
-<div>
-    <small class="muted pull-right">
-        Sorted by date, new to old.
-    </small>
-    <h3>All posts</h3>
-</div>
-<ul>
-    {% for post in site.posts %}
-    <li>
-    <a href="{{ post.url }}">
-        {{ post.title }}
-        <small class="pull-right">{{ post.date | date_to_string }}</small>
-    </a>
-    </li>
-    {% endfor %}
-</ul>

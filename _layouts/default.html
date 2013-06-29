@@ -2,22 +2,15 @@
 <html lang="en">
     <head>
         <title>Sean Caetano Martin</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta charset="utf-8">
-        <link href="//raw.github.com/necolas/normalize.css/master/normalize.css" rel="stylesheet">
-        <link href="/css/flatty.css" rel="stylesheet">
+        <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+        <link href="/css/native.css" rel="stylesheet">
+        <link href='http://fonts.googleapis.com/css?family=Bitter:400,700,400italic' rel='stylesheet' type='text/css'>
+        <link href="/css/style.css" rel="stylesheet">
     </head>
-    <body style="display: none;">
-    <div class="container cf">
-        <div class="content">{{ content }}</div>
-        <div class="sidebar">
-            {% include sidebar.html %}
-        </div>
+    <div class="container-fluid">
+        {{ content }}
     </div>
     {% include analytics.html %}
-    <script src="/js/jquery.min.js"></script>
-    <script>
-        $.getScript('/js/script.js');
-    </script>
     </body>
 </html>
