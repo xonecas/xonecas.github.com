@@ -2,9 +2,9 @@
 layout: default
 ---
 <div class="row-fluid">
-  <div style="font-size: 66px;padding: 80px; text-align:center;line-height:70px">
+  <div style="text-align:center;">
     <h2 class="muted">The new homepage and purple will be launched</h2>
-    <h1 id="timer"></h1>
+    <h1 id="timer" style="font-size: 80px; line-height: 100px"></h1>
   </div>
 </div>
 <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.1.0/moment.min.js"></script>
@@ -16,8 +16,15 @@ layout: default
     el.innerHTML = m.fromNow();
 
     setTimeout(function update() {
-      el.innerHTML = m.fromNow();
-      update();
+
+      if (Math.random() < 0.1) {
+        el.innerHTML = "Or not, just to mess with Yaron";
+      } else {
+        el.innerHTML = m.fromNow();
+      }
+
+      setTimeout(update, 1000);
+
     }, 1000);
   }());
 </script>
