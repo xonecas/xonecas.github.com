@@ -1,0 +1,23 @@
+---
+layout: default
+---
+<div class="row-fluid">
+  <div style="font-size: 66px;padding: 80px; text-align:center;line-height:70px">
+    <h2 class="muted">The new homepage and purple will be launched</h2>
+    <h1 id="timer"></h1>
+  </div>
+</div>
+<script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.1.0/moment.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/qwery/3.4.1/qwery.js"></script>
+<script>
+  (function () {
+    var el = qwery('#timer')[0];
+    var m = moment([2013, 7, 31]);
+    el.innerHTML = m.fromNow();
+
+    setTimeout(function update() {
+      el.innerHTML = m.fromNow();
+      update();
+    }, 1000);
+  }());
+</script>
