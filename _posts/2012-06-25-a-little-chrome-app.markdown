@@ -1,11 +1,7 @@
 ---
 layout: post
+title: An example Chrome app
 ---
-
-A little Chrome app
--------------------
-
-San Jose, Jul 6, 2012
 
 I've been using [Backbone.js](http://documentcloud.github.com/backbone/backbone.js) and after a few hours of reading the source in the browser my eyes demanded some syntax highlight. I assumed someone would've done this by now, but I could only find apps that provide much more than a nicer **reading** environment (I'm not looking to edit code on the browser).  *Great!*, I tough to myself, *I get to roll my own*!  Because I read mostly javascript source code, I focused on that, maybe if the need arises I'll beef it up with html and css highlight.
 

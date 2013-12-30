@@ -1,32 +1,25 @@
 ---
 layout: default
 ---
+
 <div class="post">
-    <div class="hero-unit banner">
-        <a class="pull-right text-right" href="/">
-            Front page
-            <img class="img-circle img-polaroid" src="//2.gravatar.com/avatar/9ae495ba55b662af127e43af7296dc5e?size=32" width=32 alt="My handsome self." title="╯°□°）╯︵ ┻━┻">
-        </a>
-        {{ content }}
-    </div>
-    <div class="row-fluid">
-        <div class="offset2 span6">
-            {% include disqus.html %}
-        </div>
-        <div class="span2">
-            <h3>Related</h3>
-            <ul class="nav nav-tabs nav-stacked">
-                {% for post in site.related_posts limit:3 %}
-                <li>
-                <a href="{{ post.url }}">
-                    <strong>{{ post.title }}</strong><br>
-                    <small class="muted">
-                        {{ post.date | date_to_string }}
-                    </small>
-                </a>
-                </li>
-                {% endfor %}
-            </ul>
-        </div>
-    </div>
+  <h1 class="post-title">{{ page.title }}</h1>
+  <span class="post-date">{{ page.date | date_to_string }}</span>
+  {{ content }}
+</div>
+
+<div class="related">
+  <h2>Related Posts</h2>
+  <ul class="related-posts">
+    {% for post in site.related_posts limit:3 %}
+      <li>
+        <h3>
+          <a href="{{ post.url }}">
+            {{ post.title }}
+            <small>{{ post.date | date_to_string }}</small>
+          </a>
+        </h3>
+      </li>
+    {% endfor %}
+  </ul>
 </div>

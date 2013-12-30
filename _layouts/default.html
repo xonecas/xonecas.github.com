@@ -1,16 +1,26 @@
-<!doctype html>
-<html lang="en">
-    <head>
-        <title>Sean Caetano Martin</title>
-        <meta charset="utf-8">
-        <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
-        <link href="/css/native.css" rel="stylesheet">
-        <link href='http://fonts.googleapis.com/css?family=Bitter:400,700,400italic' rel='stylesheet' type='text/css'>
-        <link href="/css/style.css" rel="stylesheet">
-    </head>
-    <div class="container-fluid">
-        {{ content }}
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  {% include head.html %}
+
+  <body>
+
+    <div class="container content">
+      <div class="masthead">
+        <h3 class="masthead-title">
+          <a href="/" title="Home">{{ site.title }}</a>
+          <small>{{ site.tagline }}</small>
+        </h3>
+      </div>
+
+      {{ content }}
+
+      <div class="footer">
+        <p>
+          &copy; {{ site.time | date: '%Y' }}. All rights reserved.
+        </p>
+      </div>
     </div>
-    {% include analytics.html %}
-    </body>
+
+  </body>
 </html>

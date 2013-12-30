@@ -1,34 +1,37 @@
 ---
 layout: default
+title: Home
 ---
-<div class="text-center hero-unit banner">
-    <img class="img-circle img-polaroid" src="//2.gravatar.com/avatar/9ae495ba55b662af127e43af7296dc5e?size=128" width=128 alt="My handsome self." title="╯°□°）╯︵ ┻━┻">
-    <h1>Sean</h1>
-    <p class="lead">Internet platform #1 fan!</p>
+
+<div class="posts">
+  {% for post in paginator.posts %}
+  <div class="post">
+    <h1 class="post-title">
+      <a href="{{ post.url }}">
+        {{ post.title }}
+      </a>
+    </h1>
+
+    <span class="post-date">{{ post.date | date_to_string }}</span>
+
+    {{ post.content }}
+  </div>
+  {% endfor %}
 </div>
-<div class="row-fluid">
-    <div class="offset2 span6">
-        <small class="muted pull-right">
-            Sorted by date, new to old.
-        </small>
-        <h2>All posts</h2>
-        <ul class="nav nav-tabs nav-stacked">
-            {% for post in site.posts %}
-            <li>
-            <a href="{{ post.url }}">
-                {{ post.title }}
-                <small class="pull-right muted">{{ post.date | date_to_string }}</small>
-            </a>
-            </li>
-            {% endfor %}
-        </ul>
-    </div>
-    <div class="span2">
-        <h2>Sean Caetano Martin</h2>
-        {% capture about %}
-        {% include about.markdown %}
-        {% endcapture %}
-        {{ about | markdownify }}
-        {% include buttons.html %}
-    </div>
+
+<div class="pagination">
+  {% if paginator.next_page %}
+    <a class="pagination-item older" href="/page{{paginator.next_page}}">Older</a>
+  {% else %}
+    <span class="pagination-item older">Older</span>
+  {% endif %}
+  {% if paginator.previous_page %}
+    {% if paginator.page == 2 %}
+      <a class="pagination-item newer" href="/">Newer</a>
+    {% else %}
+      <a class="pagination-item newer" href="/page{{paginator.previous_page}}">Newer</a>
+    {% endif %}
+  {% else %}
+    <span class="pagination-item newer">Newer</span>
+  {% endif %}
 </div>

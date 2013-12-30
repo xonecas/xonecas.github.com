@@ -1,11 +1,7 @@
 ---
 layout: post
+title: Random Titles
 ---
-
-Random title generator
-----------------------
-
-Sunnyvale, Feb 24, 2013
 
 Titles are hard, giving something a name demands thinking about it and making a decision. Unless of course you know some javascript. And... I do. So I can't come up with a title, I'll let the code choose a random(ish) one for us.
 
