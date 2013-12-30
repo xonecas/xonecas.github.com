@@ -6,10 +6,10 @@ pygments:         true
 permalink:        pretty
 
 # Setup
-title:            Poole
-tagline:          'The Jekyll butler'
-description:      'Base theme for Jekyll themes by @mdo.'
-url:              http://getpoole.com
+title:            "Sean Caetano Martin"
+tagline:          'xonecas'
+description:      "I'm a software engineer who enjoys the ocasional blog post."
+url:              http://xonecas.github.com
 
 author:
   name:           'Mark Otto'
@@ -21,4 +21,4 @@ paginate:         5
 version:          1.0.0
 
 github:
-  repo:           https://github.com/poole
+  repo:           https://github.com/xonecas

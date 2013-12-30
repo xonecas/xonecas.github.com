@@ -16,7 +16,7 @@ Here's the **clean** implementation:
         var m;
         if (h < l) {
             return false;
-        } 
+        }
 
         m = Math.floor(l + (h - l) / 2);
 
